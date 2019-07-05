@@ -123,15 +123,15 @@ class schoolsoft:
                 self.total_merits += s.merits
                 '''Get table'''
                 print('%s: %s' % (s.name, s.grade))
+
 def __main__():
     data = ""
     with open(sys.argv[1], 'r') as json_file:
         data = json.load(json_file)
 
-    print(data)
-    caspian=schoolsoft(data["username"], data["password"])
-    caspian.login()
-    caspian.get_total_merit()
-    print("\n", caspian.total_merits)
+    student=schoolsoft(data["username"], data["password"])
+    student.login()
+    student.get_total_merit()
+    print("\n", student.total_merits)
 
 __main__()
